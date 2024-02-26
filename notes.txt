@@ -1,0 +1,20 @@
+For CRUD operations
+-----------------------------
+
+python manage.py makemigration
+python manage.py migrate
+python manage.py shell
+from home.models import *
+
+std = Student()
+std = Student(name = "Akshat", age=22, address = "Naveen Chowk ") // Way 1 (CREATE)
+std.save()
+Student.objects.create(name = "Shikhar", age=22, address = "Lucknow") // Way 2 (CREATE)
+
+Student.objects.all()[0].name //(READ) Way 1
+Student.objects.get(id = 1).name // READ Way2 (Better Way)
+
+Student.objects.filter(id = 2).update(name = "Shikhar LKO ") // UPDATE
+
+Student.objects.get(id = 1).delete()  //DELETE 
+Student.objects.all().delete() // DELETE ALL RECORDS
